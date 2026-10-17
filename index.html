@@ -1,1 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سياسة الخصوصية | نقطة بيع</title>
+<meta name="description" content="سياسة الخصوصية لتطبيق نقطة بيع · Privacy Policy for Point of Sale app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f6fb;
+    --surface:#ffffff;
+    --text:#1b2236;
+    --muted:#5f6b85;
+    --border:#e3e8f3;
+    --primary:#0a84ff;
+    --primary-2:#5e5ce6;
+    --success:#22b573;
+    --success-bg:#e6f8ef;
+    --warn-bg:#fff6e0;
+    --warn:#b7791f;
+    --shadow:0 10px 30px rgba(31,45,95,.08);
+    --radius:20px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d111c;--surface:#161c2b;--text:#eaf0ff;--muted:#98a3bf;--border:#25304a;
+      --success-bg:#12332a;--warn-bg:#352b12;--warn:#f2c76b;--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d111c;--surface:#161c2b;--text:#eaf0ff;--muted:#98a3bf;--border:#25304a;
+    --success-bg:#12332a;--warn-bg:#352b12;--warn:#f2c76b;--shadow:0 10px 30px rgba(0,0,0,.35);
+  }
 
+  /* Language switching: show only the active language */
+  html[lang="ar"] .en{display:none !important}
+  html[lang="en"] .ar{display:none !important}
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{
+    background:var(--bg);color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+  html[lang="ar"] body{font-family:'Tajawal',-apple-system,'SF Arabic','Segoe UI',Tahoma,sans-serif;line-height:1.9;font-size:17px}
+  html[lang="en"] body{font-family:'Inter',-apple-system,'SF Pro Text','Segoe UI',Roboto,sans-serif;line-height:1.75;font-size:16.5px}
+
+  /* Top bar */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(180%) blur(16px);
+    -webkit-backdrop-filter:saturate(180%) blur(16px);
+    background:color-mix(in srgb,var(--bg) 80%,transparent);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-inner{
+    max-width:1080px;margin:auto;padding:12px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+  .brand-logo{
+    width:36px;height:36px;border-radius:11px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    display:grid;place-items:center;color:#fff;
+    box-shadow:0 6px 16px rgba(10,132,255,.35);
+  }
+  .brand-logo svg{width:20px;height:20px}
+  .actions{display:flex;align-items:center;gap:8px}
+  .theme-btn,.lang-btn{
+    border:1px solid var(--border);background:var(--surface);color:var(--text);
+    height:40px;border-radius:12px;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    font-family:inherit;font-size:15px;font-weight:700;
+    transition:transform .2s,border-color .2s;
+  }
+  .theme-btn{width:40px;font-size:18px}
+  .lang-btn{padding:0 14px}
+  .lang-btn svg{width:18px;height:18px}
+  .theme-btn:hover,.lang-btn:hover{transform:scale(1.05);border-color:var(--primary)}
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#0a84ff 0%,#5e5ce6 60%,#8e5cf0 100%);
+    color:#fff;padding:64px 20px 90px;text-align:center;
+  }
+  .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12)}
+  .hero::before{width:320px;height:320px;top:-120px;inset-inline-start:-80px}
+  .hero::after{width:240px;height:240px;bottom:-110px;inset-inline-end:-60px}
+  .hero-inner{position:relative;max-width:720px;margin:auto}
+  .shield{
+    width:84px;height:84px;margin:0 auto 20px;border-radius:26px;
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+    display:grid;place-items:center;backdrop-filter:blur(8px);
+  }
+  .shield svg{width:44px;height:44px}
+  .hero h1{font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.4;margin-bottom:10px}
+  .hero p{font-size:clamp(16px,2.4vw,19px);opacity:.92}
+  .updated{
+    display:inline-block;margin-top:22px;padding:6px 16px;border-radius:999px;
+    background:rgba(255,255,255,.18);font-size:14px;font-weight:500;
+  }
+
+  /* Highlights */
+  .highlights{
+    max-width:1080px;margin:-50px auto 0;padding:0 20px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;
+    position:relative;z-index:2;
+  }
+  .hl{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:20px 18px;box-shadow:var(--shadow);text-align:center;
+  }
+  .hl .ico{
+    width:48px;height:48px;border-radius:15px;margin:0 auto 10px;
+    display:grid;place-items:center;font-size:24px;background:var(--success-bg);
+  }
+  .hl h3{font-size:16px;font-weight:800;margin-bottom:2px}
+  .hl p{font-size:14px;color:var(--muted);line-height:1.7}
+
+  /* Layout */
+  .layout{
+    max-width:1080px;margin:40px auto 60px;padding:0 20px;
+    display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:start;
+  }
+  .toc{
+    position:sticky;top:84px;
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+  }
+  .toc h4{font-size:15px;color:var(--muted);margin-bottom:10px;font-weight:700}
+  .toc a{
+    display:block;padding:7px 12px;border-radius:10px;
+    color:var(--text);text-decoration:none;font-size:15px;font-weight:500;
+    transition:background .2s,color .2s;
+  }
+  .toc a:hover{background:var(--bg)}
+  .toc a.active{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff}
+
+  .content{display:flex;flex-direction:column;gap:18px}
+  .card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow);
+  }
+  .card h2{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:800;margin-bottom:12px}
+  .num{
+    flex:none;width:34px;height:34px;border-radius:11px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    color:#fff;display:grid;place-items:center;font-size:16px;font-weight:700;
+  }
+  .card p{margin-bottom:10px}
+  .card p:last-child{margin-bottom:0}
+  .card ul{list-style:none;margin:8px 0}
+  .card li{position:relative;padding:4px 0;padding-inline-start:28px}
+  .card li::before{
+    content:"";position:absolute;inset-inline-start:6px;top:15px;
+    width:9px;height:9px;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  }
+  .note{
+    margin-top:12px;padding:14px 16px;border-radius:14px;font-size:15.5px;
+    background:var(--success-bg);border:1px solid color-mix(in srgb,var(--success) 40%,transparent);
+  }
+  .note.warn{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+  .tag{
+    display:inline-block;padding:2px 10px;border-radius:999px;font-size:13.5px;font-weight:700;
+    background:var(--success-bg);color:var(--success);margin-inline-start:6px;
+  }
+  .table-wrap{overflow-x:auto;margin-top:10px;border:1px solid var(--border);border-radius:14px}
+  table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:480px}
+  th,td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--border)}
+  th{background:var(--bg);font-weight:700;color:var(--muted);font-size:14px}
+  tr:last-child td{border-bottom:none}
+
+  .contact{background:linear-gradient(135deg,#0a84ff,#5e5ce6);color:#fff;border:none}
+  .contact h2,.contact p{color:#fff}
+  .contact p{opacity:.95}
+  .contact a{
+    display:inline-block;margin-top:8px;padding:10px 22px;border-radius:14px;
+    background:#fff;color:#2b3bd6;font-weight:800;text-decoration:none;direction:ltr;
+  }
+
+  footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
+
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr}
+    .toc{position:static}
+    .toc nav{display:flex;flex-wrap:wrap;gap:6px}
+    .card{padding:22px 20px}
+    .brand span{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h4M15 15h2"/></svg>
+      </div>
+      <span class="ar">نقطة بيع</span><span class="en">Point of Sale</span>
+    </div>
+    <div class="actions">
+      <button class="lang-btn" id="langBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+        <span class="ar">English</span><span class="en">العربية</span>
+      </button>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">🌓</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="shield" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+    </div>
+    <h1><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></h1>
+    <p><span class="ar">بياناتك أمانة، وتبقى على جهازك أنت فقط.</span><span class="en">Your data is a trust. It stays on your device only.</span></p>
+    <span class="updated"><span class="ar">آخر تحديث: 17 أكتوبر 2026</span><span class="en">Last updated: October 17, 2026</span></span>
+  </div>
+</section>
+
+<section class="highlights">
+  <div class="hl"><div class="ico">📵</div>
+    <h3><span class="ar">بدون إنترنت</span><span class="en">Works Offline</span></h3>
+    <p><span class="ar">التطبيق يعمل بالكامل دون اتصال.</span><span class="en">The app runs fully without internet.</span></p></div>
+  <div class="hl"><div class="ico">🙅</div>
+    <h3><span class="ar">بدون حساب</span><span class="en">No Account</span></h3>
+    <p><span class="ar">لا تسجيل ولا بريد ولا كلمة مرور.</span><span class="en">No sign-up, email, or password.</span></p></div>
+  <div class="hl"><div class="ico">📱</div>
+    <h3><span class="ar">بيانات محلية</span><span class="en">Local Data</span></h3>
+    <p><span class="ar">قاعدة SQLite على جهازك فقط.</span><span class="en">SQLite database on your device only.</span></p></div>
+  <div class="hl"><div class="ico">🚫</div>
+    <h3><span class="ar">بدون تتبع</span><span class="en">No Tracking</span></h3>
+    <p><span class="ar">لا إعلانات ولا تحليلات ولا مشاركة.</span><span class="en">No ads, analytics, or data sharing.</span></p></div>
+</section>
+
+<main class="layout">
+  <aside class="toc">
+    <h4><span class="ar">المحتويات</span><span class="en">Contents</span></h4>
+    <nav id="toc">
+      <a href="#s1"><span class="ar">مقدمة</span><span class="en">Introduction</span></a>
+      <a href="#s2"><span class="ar">ما الذي نجمعه؟</span><span class="en">What We Collect</span></a>
+      <a href="#s3"><span class="ar">البيانات المخزنة على جهازك</span><span class="en">Data Stored on Your Device</span></a>
+      <a href="#s4"><span class="ar">الأذونات</span><span class="en">Permissions</span></a>
+      <a href="#s5"><span class="ar">النسخ الاحتياطي والمشاركة</span><span class="en">Backup &amp; Sharing</span></a>
+      <a href="#s6"><span class="ar">الطباعة والتصدير</span><span class="en">Printing &amp; Export</span></a>
+      <a href="#s7"><span class="ar">الأمان</span><span class="en">Security</span></a>
+      <a href="#s8"><span class="ar">الأطفال</span><span class="en">Children's Privacy</span></a>
+      <a href="#s9"><span class="ar">حذف البيانات</span><span class="en">Deleting Your Data</span></a>
+      <a href="#s10"><span class="ar">التغييرات</span><span class="en">Policy Changes</span></a>
+      <a href="#s11"><span class="ar">الدعم الفني</span><span class="en">Technical Support</span></a>
+    </nav>
+  </aside>
+
+  <div class="content">
+
+    <section class="card" id="s1">
+      <h2><span class="num">1</span><span class="ar">مقدمة</span><span class="en">Introduction</span></h2>
+      <p class="ar">نحترم خصوصيتك. «نقطة بيع» تطبيق كاشير لأجهزة iPhone وiPad، صُمّم ليعمل بالكامل على جهازك دون الحاجة إلى إنترنت أو إنشاء حساب. توضح هذه السياسة ما يحدث لبياناتك عند استخدام التطبيق.</p>
+      <p class="en">We respect your privacy. Point of Sale is a simple, fast cashier app for iPhone and iPad, designed to run entirely on your device with no internet connection and no account required. This policy explains what happens to your data when you use the app.</p>
+      <div class="note ar"><strong>الخلاصة:</strong> نحن لا نجمع بياناتك ولا نرسلها ولا نشاركها مع أي جهة. كل ما تدخله في التطبيق يبقى عندك.</div>
+      <div class="note en"><strong>In short:</strong> we do not collect, transmit, or share your data with anyone. Everything you enter into the app stays with you.</div>
+    </section>
+
+    <section class="card" id="s2">
+      <h2><span class="num">2</span><span class="ar">ما الذي نجمعه؟</span><span class="en">What We Collect</span></h2>
+      <p class="ar"><strong>لا شيء.</strong> لا يرسل التطبيق أي بيانات إلى خوادمنا أو إلى أي طرف ثالث، ولا يحتوي على:</p>
+      <p class="en"><strong>Nothing.</strong> The app does not send any data to our servers or to any third party, and it does not include:</p>
+      <ul class="ar">
+        <li>حسابات مستخدمين أو تسجيل دخول عبر الإنترنت</li>
+        <li>إعلانات أو شبكات إعلانية</li>
+        <li>أدوات تحليلات أو تتبع سلوك الاستخدام</li>
+        <li>مشاركة بيانات مع أطراف خارجية أو بيعها</li>
+      </ul>
+      <ul class="en">
+        <li>User accounts or online sign-in</li>
+        <li>Advertising or ad networks</li>
+        <li>Analytics or usage-tracking tools</li>
+        <li>Sharing or selling of data to third parties</li>
+      </ul>
+    </section>
+
+    <section class="card" id="s3">
+      <h2><span class="num">3</span><span class="ar">البيانات المخزنة على جهازك</span><span class="en">Data Stored on Your Device</span><span class="tag"><span class="ar">محلي فقط</span><span class="en">Local only</span></span></h2>
+      <p class="ar">يحفظ التطبيق البيانات التي تُدخلها أنت في قاعدة بيانات SQLite داخل جهازك، وهي:</p>
+      <p class="en">The app saves the information you enter in a SQLite database inside your device. This includes:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th><span class="ar">النوع</span><span class="en">Type</span></th>
+            <th><span class="ar">أمثلة</span><span class="en">Examples</span></th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="ar">المبيعات والفواتير</span><span class="en">Sales &amp; invoices</span></td>
+              <td><span class="ar">الأصناف المباعة، الخصومات، طرق الدفع، أنواع الفواتير، أماكن الخدمة</span><span class="en">Items sold, discounts, payment methods, invoice types, service locations</span></td>
+            </tr>
+            <tr>
+              <td><span class="ar">العملاء</span><span class="en">Customers</span></td>
+              <td><span class="ar">الاسم ورقم الجوال</span><span class="en">Name and mobile number</span></td>
+            </tr>
+            <tr>
+              <td><span class="ar">الأصناف والمجموعات</span><span class="en">Items &amp; groups</span></td>
+              <td><span class="ar">الأسماء والأسعار والتصنيفات</span><span class="en">Names, prices, and categories</span></td>
+            </tr>
+            <tr>
+              <td><span class="ar">الموظفون والصلاحيات</span><span class="en">Staff &amp; permissions</span></td>
+              <td><span class="ar">أسماء الموظفين والأدوار والرمز السري للمدير</span><span class="en">Employee names, roles, and the manager's passcode</span></td>
+            </tr>
+            <tr>
+              <td><span class="ar">بيانات المنشأة</span><span class="en">Business details</span></td>
+              <td><span class="ar">الشعار والعنوان ورقم الجوال الظاهر على الفاتورة</span><span class="en">Logo, address, and phone number shown on invoices</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note warn ar">بما أنك تُدخل بيانات عملاء (مثل أرقام الجوال)، فأنت المسؤول عن استخدامها بما يتوافق مع الأنظمة المحلية في بلدك.</div>
+      <div class="note warn en">Since you enter customer data (such as phone numbers), you are responsible for handling it in line with the laws and regulations that apply in your country.</div>
+    </section>
+
+    <section class="card" id="s4">
+      <h2><span class="num">4</span><span class="ar">الأذونات</span><span class="en">Permissions</span></h2>
+      <p class="ar">لا يطلب التطبيق أذونات تتعلق بالموقع أو جهات الاتصال أو الميكروفون. وقد يتيح لك اختيار ملف أو صورة (كشعار المنشأة أو ملف نسخة احتياطية) عبر أدوات النظام، ولا يصل التطبيق إلا إلى العنصر الذي تختاره بنفسك.</p>
+      <p class="en">The app does not request permissions for location, contacts, or microphone. It may let you pick a file or image (such as your business logo or a backup file) through the system picker, and the app only accesses the item you choose yourself.</p>
+    </section>
+
+    <section class="card" id="s5">
+      <h2><span class="num">5</span><span class="ar">النسخ الاحتياطي والمشاركة</span><span class="en">Backup &amp; Sharing</span></h2>
+      <ul class="ar">
+        <li>يمكنك إنشاء نسخة احتياطية بضغطة واحدة واسترجاعها لاحقًا أو نقلها إلى جهاز آخر.</li>
+        <li>ينشئ التطبيق نسخة تلقائية قبل أي عملية مسح أو استرجاع.</li>
+        <li>يفحص التطبيق سلامة الملف قبل الاسترجاع.</li>
+        <li>عند مشاركة النسخة الاحتياطية عبر AirDrop أو الملفات أو أي تطبيق آخر، فأنت من يختار الوجهة، وتخضع حينها لسياسة خصوصية تلك الخدمة.</li>
+      </ul>
+      <ul class="en">
+        <li>You can create a backup with one tap and restore it later or move it to another device.</li>
+        <li>The app automatically creates a copy before any wipe or restore operation.</li>
+        <li>The app checks the file's integrity before restoring.</li>
+        <li>When you share a backup through AirDrop, Files, or any other app, you choose the destination, and the privacy policy of that service then applies.</li>
+      </ul>
+      <div class="note warn ar">ملف النسخة الاحتياطية يحتوي بياناتك كاملة، فاحرص على مشاركته مع جهات تثق بها فقط.</div>
+      <div class="note warn en">A backup file contains all of your data, so share it only with parties you trust.</div>
+    </section>
+
+    <section class="card" id="s6">
+      <h2><span class="num">6</span><span class="ar">الطباعة والتصدير</span><span class="en">Printing &amp; Export</span></h2>
+      <p class="ar">عند مشاركة فاتورة أو طباعتها أو تصدير تقرير بصيغة CSV أو PDF عبر AirPrint، تتم العملية عبر خدمات النظام في جهازك وبقرار منك. لا يحتفظ فريق التطبيق بأي نسخة من هذه الملفات.</p>
+      <p class="en">When you share or print an invoice, or export a report as CSV or PDF through AirPrint, the process runs through your device's system services and at your own decision. The app's team keeps no copy of these files.</p>
+    </section>
+
+    <section class="card" id="s7">
+      <h2><span class="num">7</span><span class="ar">الأمان</span><span class="en">Security</span></h2>
+      <p class="ar">تُحفظ بياناتك ضمن مساحة التطبيق المحمية في نظام iOS. ننصحك بما يلي لحماية بياناتك:</p>
+      <p class="en">Your data is stored in the app's protected sandbox in iOS. We recommend the following to keep your data safe:</p>
+      <ul class="ar">
+        <li>تفعيل رمز القفل أو Face ID / Touch ID على جهازك</li>
+        <li>اختيار رمز سري قوي لحساب المدير وعدم مشاركته</li>
+        <li>أخذ نسخ احتياطية دورية وحفظها في مكان آمن</li>
+        <li>تفعيل نسخ iCloud للجهاز إن رغبت، علمًا بأنه خاضع لإعدادات Apple وسياستها</li>
+      </ul>
+      <ul class="en">
+        <li>Enable a passcode or Face ID / Touch ID on your device</li>
+        <li>Choose a strong manager passcode and never share it</li>
+        <li>Take regular backups and store them somewhere safe</li>
+        <li>Optionally enable iCloud device backup, which is subject to Apple's settings and policy</li>
+      </ul>
+    </section>
+
+    <section class="card" id="s8">
+      <h2><span class="num">8</span><span class="ar">خصوصية الأطفال</span><span class="en">Children's Privacy</span></h2>
+      <p class="ar">التطبيق أداة لإدارة المبيعات موجهة لأصحاب الأنشطة التجارية، ولا نجمع عمدًا أي معلومات عن الأطفال، ولا نجمع معلومات عن أي مستخدم أصلًا.</p>
+      <p class="en">The app is a sales-management tool aimed at business owners. We do not knowingly collect any information about children, and we do not collect information about any user at all.</p>
+    </section>
+
+    <section class="card" id="s9">
+      <h2><span class="num">9</span><span class="ar">حذف البيانات</span><span class="en">Deleting Your Data</span></h2>
+      <p class="ar">بياناتك تحت سيطرتك بالكامل. يمكنك مسحها من داخل التطبيق والبدء بقاعدة فارغة، أو حذف التطبيق من جهازك لإزالة جميع بياناته المحلية نهائيًا. وبما أننا لا نملك نسخة من بياناتك، فلا حاجة لتقديم طلب حذف لدينا.</p>
+      <p class="en">Your data is fully under your control. You can wipe it from within the app and start with an empty database, or delete the app from your device to permanently remove all of its local data. Since we hold no copy of your data, there is no need to submit a deletion request to us.</p>
+    </section>
+
+    <section class="card" id="s10">
+      <h2><span class="num">10</span><span class="ar">التغييرات على السياسة</span><span class="en">Changes to This Policy</span></h2>
+      <p class="ar">قد نحدّث هذه السياسة من وقت لآخر عند إضافة ميزات جديدة. سيظهر تاريخ آخر تحديث أعلى هذه الصفحة، وننصحك بمراجعتها دوريًا.</p>
+      <p class="en">We may update this policy from time to time when new features are added. The "Last updated" date at the top of this page will reflect any change, and we encourage you to review it periodically.</p>
+    </section>
+
+    <section class="card contact" id="s11">
+      <h2><span class="num" style="background:rgba(255,255,255,.2)">11</span><span class="ar">الدعم الفني</span><span class="en">Technical Support</span></h2>
+      <p class="ar">إن كان لديك أي سؤال حول سياسة الخصوصية، أو تحتاج مساعدة فنية في التطبيق، يسعدنا تواصلك عبر البريد الإلكتروني.</p>
+      <p class="en">If you have any questions about this privacy policy, or need technical support with the app, please contact us by email.</p>
+      <a id="mailLink" href="mailto:omran_adam@yahoo.com">omran_adam@yahoo.com</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <span class="ar">© 2026 نقطة بيع. جميع الحقوق محفوظة.</span>
+  <span class="en">© 2026 Point of Sale. All rights reserved.</span>
+</footer>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var TITLES={ar:'سياسة الخصوصية | نقطة بيع',en:'Privacy Policy | Point of Sale'};
+    var SUBJECTS={ar:'الدعم الفني - نقطة بيع',en:'Point of Sale Support'};
+
+    function setLang(lang){
+      root.setAttribute('lang',lang);
+      root.setAttribute('dir',lang==='ar'?'rtl':'ltr');
+      document.title=TITLES[lang];
+      document.getElementById('mailLink').href=
+        'mailto:omran_adam@yahoo.com?subject='+encodeURIComponent(SUBJECTS[lang]);
+      try{localStorage.setItem('lang',lang);}catch(e){}
+      try{history.replaceState(null,'',location.pathname+'?lang='+lang+location.hash);}catch(e){}
+    }
+
+    // Initial language: ?lang= → saved choice → browser language
+    var initial=null;
+    var m=location.search.match(/[?&]lang=(ar|en)/);
+    if(m) initial=m[1];
+    if(!initial){try{initial=localStorage.getItem('lang');}catch(e){}}
+    if(initial!=='ar'&&initial!=='en'){
+      initial=(navigator.language||'ar').toLowerCase().indexOf('ar')===0?'ar':'en';
+    }
+    setLang(initial);
+
+    document.getElementById('langBtn').addEventListener('click',function(){
+      setLang(root.getAttribute('lang')==='ar'?'en':'ar');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+
+    // Theme toggle
+    var btn=document.getElementById('themeBtn');
+    try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
+    btn.addEventListener('click',function(){
+      var dark=root.getAttribute('data-theme')==='dark' ||
+        (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+      var next=dark?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('theme',next);}catch(e){}
+    });
+
+    // Active TOC link
+    var links=[].slice.call(document.querySelectorAll('#toc a'));
+    var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          var a=map[e.target.id];if(a)a.classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    document.querySelectorAll('.card[id]').forEach(function(s){io.observe(s);});
+  })();
+</script>
+</body>
+</html>
